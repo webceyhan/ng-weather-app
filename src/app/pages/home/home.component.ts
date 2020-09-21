@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { combineLatest, Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
+import { CityService } from 'src/app/city.service';
 
 import { Weather } from 'src/app/models';
 import { WeatherService } from 'src/app/weather.service';
@@ -12,13 +14,18 @@ import { WeatherService } from 'src/app/weather.service';
 export class HomeComponent implements OnInit {
   weathers$: Observable<Weather[]>;
 
-  constructor(private weatherSvc: WeatherService) {}
+  constructor(
+    private citySvc: CityService,
+    private weatherSvc: WeatherService
+  ) {}
 
   ngOnInit(): void {
-    const cities = ['miami', 'brussels', 'tokyo'];
+    this.citySvc.load();
 
-    this.weathers$ = combineLatest(
-      cities.map((city) => this.weatherSvc.getWeather(city))
+    this.weathers$ = this.citySvc.cities$.pipe(
+      switchMap((cities) =>
+        combineLatest(cities.map((city) => this.weatherSvc.getWeather(city)))
+      )
     );
   }
 }

@@ -11,7 +11,7 @@ const API_URL = 'http://geodb-free-service.wirefreethought.com/v1/geo/cities';
   providedIn: 'root',
 })
 export class CityService {
-  private cities$ = new BehaviorSubject<string[]>([]);
+  cities$ = new BehaviorSubject<string[]>([]);
 
   constructor(private http: HttpClient) {}
 
