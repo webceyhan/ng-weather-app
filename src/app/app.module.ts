@@ -7,9 +7,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { WeatherIconComponent } from './weather-icon/weather-icon.component';
+import { CitySearchComponent } from './city-search/city-search.component';
 
 @NgModule({
-  declarations: [AppComponent, WeatherIconComponent],
+  declarations: [AppComponent, WeatherIconComponent, CitySearchComponent],
   imports: [
     BrowserModule,
     FormsModule,

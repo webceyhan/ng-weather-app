@@ -1,24 +1,7 @@
 <div class="container py-5">
   <h1 class="display-4 text-white text-center pb-5">{{ title }}</h1>
 
-  <div class="form-group">
-    <label for="city-search">search cities</label>
-    <input
-      id="city-search"
-      type="text"
-      class="form-control"
-      (input)="onCitySearch($event.target)"
-    />
-  </div>
-
-  <ul class="list-group list-group-flush">
-    <li
-      class="list-group-item list-group-item-action"
-      *ngFor="let city of cities$ | async"
-    >
-      {{ city.name }}
-    </li>
-  </ul>
+  <app-city-search></app-city-search>
 
   <div class="row">
     <div class="col-md-6 offset-md-3">
