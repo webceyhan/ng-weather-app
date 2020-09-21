@@ -1,3 +1,13 @@
+export interface City {
+  name: string; // 'Istanbul'
+  country: string; // 'Turkey'
+  countryCode: string; // 'TR'
+  region: string; // 'Istanbul Province';
+  regionCode: string; // '34';
+  latitude: number; // 41.01;
+  longitude: number; // 28.960277777;
+}
+
 interface WeatherPartialResponse {
   main: {
     temp: number;
@@ -36,4 +46,8 @@ export interface ForecastResponse {
     sunrise: number;
     sunset: number;
   };
+}
+
+export interface CityListResponse {
+  data: City[];
 }
