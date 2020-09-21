@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
-import { ForecastResponse, WeatherResponse } from './models';
+import { ForecastResponse, Weather, WeatherResponse } from './models';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -20,7 +21,20 @@ export class WeatherService {
   }
 
   getWeather(city: string) {
-    return this.get<WeatherResponse>('/weather', city);
+    return this.get<WeatherResponse>('/weather', city).pipe(
+      map(({ name, weather, main, wind }) => {
+        return <Weather>{
+          city: name,
+          condition: weather[0].main,
+          description: weather[0].description,
+          temperature: main.temp,
+          minTemperature: main.temp_min,
+          maxTemperature: main.temp_max,
+          humidity: main.humidity,
+          wind: wind.speed,
+        };
+      })
+    );
   }
 
   getForecast(city: string) {

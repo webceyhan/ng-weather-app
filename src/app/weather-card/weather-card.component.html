@@ -1,0 +1,14 @@
+<div class="card rounded-lg shadow-lg">
+  <div class="card-body p-5">
+    <h3 class="card-title text-muted">{{ weather.city }}</h3>
+
+    <div style="width: 200px; height: 200px;" class="my-5">
+      <app-weather-icon [condition]="weather.condition"></app-weather-icon>
+    </div>
+
+    <hr />
+
+    <h1 class="display-4">{{ weather.temperature | temperature }}</h1>
+    <h5 class="card-subtitle">{{ weather.condition }}</h5>
+  </div>
+</div>

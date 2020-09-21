@@ -1,0 +1,6 @@
+<div class="card-deck">
+  <app-weather-card
+    *ngFor="let weather of weathers$ | async"
+    [weather]="weather"
+  ></app-weather-card>
+</div>

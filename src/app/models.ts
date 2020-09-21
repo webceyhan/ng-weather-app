@@ -1,3 +1,12 @@
+export type WeatherCondition =
+  | 'Clear'
+  | 'Clouds'
+  | 'Rain'
+  | 'Drizzle'
+  | 'Thunderstorm'
+  | 'Snow'
+  | 'Atmosphere';
+
 export interface City {
   name: string; // 'Istanbul'
   country: string; // 'Turkey'
@@ -6,6 +15,22 @@ export interface City {
   regionCode: string; // '34';
   latitude: number; // 41.01;
   longitude: number; // 28.960277777;
+}
+
+export interface Weather {
+  city: string;
+  country?: string;
+  population?: number;
+  timezone?: number;
+  sunrise?: number;
+  sunset?: number;
+  condition: WeatherCondition;
+  description: string;
+  temperature: number;
+  minTemperature: number;
+  maxTemperature: number;
+  humidity: number;
+  wind: number;
 }
 
 interface WeatherPartialResponse {
@@ -18,12 +43,11 @@ interface WeatherPartialResponse {
     humidity: number;
   };
   weather: {
-    main: string; // weather condition
+    main: WeatherCondition;
     description: string; // condition description
   }[];
   wind: {
     speed: number;
-    deg: number;
   };
 }
 

@@ -5,3 +5,18 @@ body {
   height: 100vh;
   background: linear-gradient(to bottom, #57c1eb 0%, #246fa8 100%);
 }
+
+svg {
+  width: 100%;
+  height: auto;
+}
+
+.blue {
+  fill: cornflowerblue;
+}
+.gray {
+  fill: #e0e0e0;
+}
+.yellow {
+  fill: #ffeb3b;
+}

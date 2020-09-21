@@ -8,9 +8,12 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { WeatherIconComponent } from './weather-icon/weather-icon.component';
 import { CitySearchComponent } from './city-search/city-search.component';
+import { WeatherCardComponent } from './weather-card/weather-card.component';
+import { HomeComponent } from './pages/home/home.component';
+import { TemperaturePipe } from './temperature.pipe';
 
 @NgModule({
-  declarations: [AppComponent, WeatherIconComponent, CitySearchComponent],
+  declarations: [AppComponent, WeatherIconComponent, CitySearchComponent, WeatherCardComponent, HomeComponent, TemperaturePipe],
   imports: [
     BrowserModule,
     FormsModule,
