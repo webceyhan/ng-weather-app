@@ -11,9 +11,10 @@ import { CitySearchComponent } from './city-search/city-search.component';
 import { WeatherCardComponent } from './weather-card/weather-card.component';
 import { HomeComponent } from './pages/home/home.component';
 import { TemperaturePipe } from './temperature.pipe';
+import { AddComponent } from './pages/add/add.component';
 
 @NgModule({
-  declarations: [AppComponent, WeatherIconComponent, CitySearchComponent, WeatherCardComponent, HomeComponent, TemperaturePipe],
+  declarations: [AppComponent, WeatherIconComponent, CitySearchComponent, WeatherCardComponent, HomeComponent, TemperaturePipe, AddComponent],
   imports: [
     BrowserModule,
     FormsModule,

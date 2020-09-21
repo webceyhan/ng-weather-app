@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-8">
+    <app-city-search (select)="onSelect($event)"></app-city-search>
+  </div>
+
+  <div class="col" *ngIf="weather$ | async as weather">
+    <app-weather-card [weather]="weather"></app-weather-card>
+
+    <br />
+
+    <button
+      class="btn btn-lg btn-block btn-warning text-uppercase shadow"
+      (click)="onAdd(weather.city)"
+    >add city
+    </button>
+  </div>
+</div>
