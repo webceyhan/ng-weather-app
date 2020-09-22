@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 import { Forecast, Weather } from 'src/app/shared/models';
+import { CityService } from 'src/app/shared/services/city.service';
 import { WeatherService } from 'src/app/shared/services/weather.service';
 
 @Component({
@@ -12,13 +13,14 @@ import { WeatherService } from 'src/app/shared/services/weather.service';
   styleUrls: ['./forecast.component.css'],
 })
 export class ForecastComponent implements OnInit {
-
   forecast$: Observable<Forecast>;
   selectedDay: Weather;
   now = Date.now();
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
+    private citySvc: CityService,
     private weatherSvc: WeatherService
   ) {}
 
@@ -32,5 +34,11 @@ export class ForecastComponent implements OnInit {
 
   onSelect(day: Weather) {
     this.selectedDay = day;
+  }
+
+  onRemove() {
+    const { city } = this.route.snapshot.params;
+    this.citySvc.remove(city);
+    this.router.navigate(['/']);
   }
 }

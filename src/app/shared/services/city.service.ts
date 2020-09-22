@@ -28,10 +28,8 @@ export class CityService {
     localStorage.setItem('cities', JSON.stringify(cities));
   }
 
-  remove(index: number) {
-    const cities = this.cities$.value;
-
-    cities.splice(index, 1);
+  remove(name: string) {
+    const cities = this.cities$.value.filter((city) => city !== name);
 
     this.cities$.next(cities);
     localStorage.setItem('cities', JSON.stringify(cities));
