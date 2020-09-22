@@ -10,6 +10,7 @@ import { WeatherService } from 'src/app/shared/services/weather.service';
   styleUrls: ['./add.component.css'],
 })
 export class AddComponent implements OnInit {
+  city: City;
   weather$: Observable<Weather>;
 
   constructor(
@@ -20,10 +21,11 @@ export class AddComponent implements OnInit {
   ngOnInit(): void {}
 
   onSelect(city: City) {
+    this.city = city;
     this.weather$ = this.weatherSvc.getWeather(city.name);
   }
 
-  onAdd(name: string) {
-    this.citySvc.add(name);
+  onAdd() {
+    this.citySvc.add(this.city.name);
   }
 }
