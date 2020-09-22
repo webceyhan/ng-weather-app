@@ -1,0 +1,30 @@
+.bg-head{
+  /* background-color:  #ffbc0042; */
+  /* background: linear-gradient(to bottom, #efc6c6 0%, #ffbc0042 100%); */
+  /* background: linear-gradient(to bottom, #ffdede 0%, #95a9ff 23%, #ffbc0042 100%); */
+  /* background: linear-gradient(to bottom, #ffdede 0%, #95b8ff 50%, #ffbc0042 100%); */
+  background: linear-gradient(to top, #ffdede 0%, #95b8ff 100%);
+}
+
+.list-group-item.active {
+  background-color: #b6d0ff;
+}
+
+.day-detail li {
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem 2rem;
+}
+
+.day-detail li:not(:last-child) {
+  border-right: solid 1px #e0e0e0;
+}
+
+.day-detail li strong {
+  font-size: 2rem;
+  font-weight: 300;
+  color: cornflowerblue;
+}

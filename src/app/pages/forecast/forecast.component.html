@@ -1,0 +1,97 @@
+<ng-container *ngIf="forecast$ | async as forecast">
+  <div class="card rounded-lg shadow-lg">
+    <div class="card-body bg-head px-5 py-4">
+      <h1 class="display-4 text-white text-uppercase">
+        {{ forecast.city.name }}
+      </h1>
+
+      <br />
+
+      <div class="row align-items-center">
+        <div class="col">
+          <p class="text-muted text-capitalize">
+            population: {{ forecast.city.population | number }}
+          </p>
+
+          <h4 class="text-muted">
+            {{ now | timezone: forecast.city.timezone | date: "medium" }}
+          </h4>
+        </div>
+
+        <div class="col-auto">
+          <h6 class="text-muted text-capitalize mb-3">
+            <strong class="mr-2">sunrise:</strong>
+            {{
+              forecast.city.sunrise
+                | timezone: forecast.city.timezone
+                | date: "mediumTime"
+            }}
+          </h6>
+
+          <h6 class="text-muted text-capitalize">
+            <strong class="mr-2">sunset:</strong>
+            {{
+              forecast.city.sunset
+                | timezone: forecast.city.timezone
+                | date: "mediumTime"
+            }}
+          </h6>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-body p-5">
+      <ul class="list-group list-group-horizontal">
+        <li
+          *ngFor="let day of forecast.days; let i = index"
+          class="list-group-item list-group-item-action flex-fill border-0 shadow"
+          [class.active]="day.date === selectedDay.date"
+          (click)="onSelect(day)"
+        >
+          <h6 class="text-muted">
+            {{ i > 0 ? (day.date | date: "EEEE") : "Today" }}
+          </h6>
+
+          <div style="width: 100%; height: 100px" class="my-4">
+            <app-weather-icon [condition]="day.condition"></app-weather-icon>
+          </div>
+
+          <h3 class="">{{ day.temperature | temperature }}</h3>
+          <p class="text-uppercase">{{ day.condition }}</p>
+        </li>
+      </ul>
+
+      <br /><br />
+
+      <div *ngIf="selectedDay" class="day-detail">
+        <h5 class="text-muted text-capitalize">
+          {{ selectedDay.description }}
+        </h5>
+
+        <br />
+
+        <ul class="list-group list-group-horizontal text-uppercase">
+          <li class="list-group-item col">
+            <span>min. temperature</span>
+            <strong>{{ selectedDay.minTemperature | temperature }}</strong>
+          </li>
+
+          <li class="list-group-item col">
+            <span>max. temperature</span>
+            <strong>{{ selectedDay.maxTemperature | temperature }}</strong>
+          </li>
+
+          <li class="list-group-item col">
+            <span>humidity</span>
+            <strong>{{ selectedDay.humidity }} %</strong>
+          </li>
+
+          <li class="list-group-item col">
+            <span>wind</span>
+            <strong>{{ selectedDay.wind }} km/h</strong>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</ng-container>

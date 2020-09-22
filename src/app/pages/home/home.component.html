@@ -1,8 +1,10 @@
 <div class="card-deck">
   <app-weather-card
+    class="pointer"
     *ngFor="let weather of weathers$ | async"
+    [routerLink]="['/forecast', weather.city]"
     [weather]="weather"
   ></app-weather-card>
 
-  <app-add-card></app-add-card>
+  <app-add-card class="pointer" routerLink="/add"></app-add-card>
 </div>

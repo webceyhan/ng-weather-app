@@ -19,11 +19,7 @@ export interface City {
 
 export interface Weather {
   city: string;
-  country?: string;
-  population?: number;
-  timezone?: number;
-  sunrise?: number;
-  sunset?: number;
+  date?: string;
   condition: WeatherCondition;
   description: string;
   temperature: number;
@@ -31,6 +27,18 @@ export interface Weather {
   maxTemperature: number;
   humidity: number;
   wind: number;
+}
+
+export interface Forecast {
+  city: {
+    name: string;
+    country: string;
+    population: number;
+    timezone: number; // offset from UTC in mseconds
+    sunrise: number; // sunrise time in mseconds
+    sunset: number; // sunset time in mseconds
+  };
+  days: Weather[];
 }
 
 interface WeatherPartialResponse {
@@ -49,6 +57,7 @@ interface WeatherPartialResponse {
   wind: {
     speed: number;
   };
+  dt_txt: string; // datetime string
 }
 
 export interface WeatherResponse extends WeatherPartialResponse {
@@ -66,9 +75,9 @@ export interface ForecastResponse {
     };
     country: string; // code BE/TR/UK..
     population: number;
-    timezone: number;
-    sunrise: number;
-    sunset: number;
+    timezone: number; // offset from UTC in seconds
+    sunrise: number; // time in seconds
+    sunset: number; // time in seconds
   };
 }
 

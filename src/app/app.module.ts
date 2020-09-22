@@ -13,9 +13,11 @@ import { HomeComponent } from './pages/home/home.component';
 import { TemperaturePipe } from './temperature.pipe';
 import { AddComponent } from './pages/add/add.component';
 import { AddCardComponent } from './add-card/add-card.component';
+import { ForecastComponent } from './pages/forecast/forecast.component';
+import { TimezonePipe } from './timezone.pipe';
 
 @NgModule({
-  declarations: [AppComponent, WeatherIconComponent, CitySearchComponent, WeatherCardComponent, HomeComponent, TemperaturePipe, AddComponent, AddCardComponent],
+  declarations: [AppComponent, WeatherIconComponent, CitySearchComponent, WeatherCardComponent, HomeComponent, TemperaturePipe, AddComponent, AddCardComponent, ForecastComponent, TimezonePipe],
   imports: [
     BrowserModule,
     FormsModule,

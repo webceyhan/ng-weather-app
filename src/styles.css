@@ -20,3 +20,7 @@ svg {
 .yellow {
   fill: #ffeb3b;
 }
+
+.pointer {
+  cursor: pointer;
+}
