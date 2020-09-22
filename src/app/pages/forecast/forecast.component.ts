@@ -3,8 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
-import { Forecast, Weather } from 'src/app/models';
-import { WeatherService } from 'src/app/weather.service';
+import { Forecast, Weather } from 'src/app/shared/models';
+import { WeatherService } from 'src/app/shared/services/weather.service';
 
 @Component({
   selector: 'app-forecast',

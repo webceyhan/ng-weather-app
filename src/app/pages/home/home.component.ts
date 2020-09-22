@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { combineLatest, Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { CityService } from 'src/app/city.service';
+import { CityService } from 'src/app/shared/services/city.service';
 
-import { Weather } from 'src/app/models';
-import { WeatherService } from 'src/app/weather.service';
+import { Weather } from 'src/app/shared/models';
+import { WeatherService } from 'src/app/shared/services/weather.service';
 
 @Component({
   selector: 'app-home',

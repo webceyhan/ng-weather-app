@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { CityListResponse } from './models';
+import { CityListResponse } from '../models';
 
 const API_URL = 'http://geodb-free-service.wirefreethought.com/v1/geo/cities';
 

@@ -2,8 +2,8 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Observable, of, Subject } from 'rxjs';
 import { distinctUntilChanged, exhaustMap } from 'rxjs/operators';
 
-import { City } from '../models';
-import { CityService } from '../city.service';
+import { City } from '../../models';
+import { CityService } from '../../services/city.service';
 
 @Component({
   selector: 'app-city-search',

@@ -1,5 +1,5 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
-import { WeatherCondition } from '../models';
+import { WeatherCondition } from '../../models';
 
 @Component({
   selector: 'app-weather-icon',

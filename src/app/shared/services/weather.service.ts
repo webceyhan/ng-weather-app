@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
-import { environment } from '../environments/environment';
-import { Forecast, ForecastResponse, Weather, WeatherResponse } from './models';
+import { environment } from '../../../environments/environment';
+import { Forecast, ForecastResponse, Weather, WeatherResponse } from '../models';
 
 const transformWeather = (response: WeatherResponse): Weather => {
   const { name, weather, main, wind, dt_txt } = response;
@@ -30,9 +30,11 @@ const transformForecast = (response: ForecastResponse): Forecast => {
     return { ...all, [date]: transformWeather(<any>curr) };
   }, {});
 
+
+
   return <Forecast>{
     city: {
-      ...city,
+      ...city as any,
       // convert to mseconds
       timezone: city.timezone * 1000,
       sunrise: city.sunrise * 1000,
