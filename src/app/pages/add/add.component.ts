@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { CityService } from 'src/app/shared/services/city.service';
-import { City, Weather } from 'src/app/shared/models';
-import { WeatherService } from 'src/app/shared/services/weather.service';
+
+import { City, Weather } from '../../shared/models';
+import { CityService } from '../../shared/services/city.service';
+import { WeatherService } from '../../shared/services/weather.service';
 
 @Component({
   selector: 'app-add',
@@ -14,6 +16,7 @@ export class AddComponent implements OnInit {
   weather$: Observable<Weather>;
 
   constructor(
+    private router:Router,
     private citySvc: CityService,
     private weatherSvc: WeatherService
   ) {}
@@ -27,5 +30,6 @@ export class AddComponent implements OnInit {
 
   onAdd() {
     this.citySvc.add(this.city.name);
+    this.router.navigate(['/']);
   }
 }
