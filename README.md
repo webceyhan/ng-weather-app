@@ -1,3 +1,5 @@
+[![Deploy to GitHub Pages via angular-cli-ghpages](https://github.com/webceyhan/ng-weather-app/actions/workflows/main.yml/badge.svg)](https://github.com/webceyhan/ng-weather-app/actions/workflows/main.yml)
+
 # WeatherApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.2.
