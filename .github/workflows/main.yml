@@ -15,7 +15,7 @@ jobs:
 
     steps:
     - name: Checkout
-    - uses: actions/checkout@v2
+      uses: actions/checkout@v2
     
     - name: Use Node.js
       uses: actions/setup-node@v2
@@ -23,6 +23,6 @@ jobs:
     - name: Prepare and deploy
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
-    - run: npm ci
-    - run: npm run ng -- deploy --base-href=/ng-weather-app/ --no-silent
+      run: |
+        npm ci
+        npm run ng -- deploy --base-href=/ng-weather-app/ --no-silent
