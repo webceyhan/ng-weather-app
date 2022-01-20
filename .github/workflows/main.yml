@@ -25,4 +25,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         npm ci
-        npm run ng -- deploy --base-href=/ng-weather-app/ --no-silent
+        npm run ng -- deploy --base-href=/ng-weather-app/ --name="webceyhan" --email="evren.ceyhan@gmail.com" --no-silent
