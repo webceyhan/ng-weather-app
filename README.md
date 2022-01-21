@@ -3,10 +3,31 @@
 # WeatherApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.2.
+Upgraded to version 13.0.0 manually later.
+
+
+## Install
+
+- Go to https://openweathermap.org/ and create an account to obtain API key which will be used to grab weather info.
+- Inside your project folder, locate .env.sample file and rename it to .env
+- Put your OPENWEATHER_API_KEY in .env file (also read Heroku section)
 
 ## Development server
 
+You should first run the express server by `npm start` command (This is needed for API calls and serving angular app on Heroku)
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+
+## Deploy to Heroku
+
+In terminal, get inside your project folder by `cd <project-root>`. 
+Bind existing project folder with heroku; `heroku create` which will create an git remote-url called 'heroku'
+Go to your Heroku dashboard and find the app and go to app/settings/config vars and set OPENWEATHER_API_KEY value (same as in .env file)
+
+In package.json, `"heroku-postbuild": "ng build --prod"` will be run before on each build process and create /dist/<project-name> folder. 
+After the build is complete, Heroku will execute  `npm start` automatically which refers to `"start": "node server.js"` 
+which will serve the static contents under /dist/<project-name> folder.
+
 
 ## Code scaffolding
 
@@ -27,3 +48,9 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+  
+## Resources
+  
+- Hosting on Heroku: https://www.heroku.com
+- Geo Cities API: http://geodb-free-service.wirefreethought.com/v1/geo/cities
+- OpeanWeatherMap API: https://api.openweathermap.org/data/2.5
