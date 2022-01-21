@@ -1,3 +1,6 @@
+// load .env variables
+require("dotenv").config();
+
 const fetch = require("node-fetch");
 const express = require("express");
 const path = require("path");
@@ -15,7 +18,7 @@ const OPENWEATHER_URL = "https://api.openweathermap.org/data/2.5";
 
 const openWeatherParams = {
   units: "metric",
-  appid: '591dacc7a16f386b0ac67b3d4b901aad',
+  appid: process.env.OPENWEATHER_API_KEY,
 };
 
 app.get("/api/weather", async (req, res) => {
