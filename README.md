@@ -10,7 +10,7 @@ Upgraded to version 13.0.0 manually later.
 - Go to https://openweathermap.org/ and create an account to obtain API key which will be used to grab weather info.
 - Inside your project folder, locate .env.sample file and rename it to .env
 - Put your OPENWEATHER_API_KEY in .env file (also read Heroku section)
-
+  
 ## Development server
 
 You should first run the express server by `npm start` command (This is needed for API calls and serving angular app on Heroku)
@@ -45,6 +45,8 @@ jobs:
 
 After project is being push to Heroku server, `"heroku-postbuild": "ng build --prod"` in package.json, 
 will be run before on each build process and create /dist/<project-name> folder. 
+
+> Make sure to add expressJs to dependencies!
 
 After the build is complete, Heroku will execute  `npm start` automatically which refers to `"start": "node server.js"` 
 which will serve the static contents under /dist/<project-name> folder.
