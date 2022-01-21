@@ -1,4 +1,4 @@
-[![Deploy to GitHub Pages via angular-cli-ghpages](https://github.com/webceyhan/ng-weather-app/actions/workflows/main.yml/badge.svg)](https://github.com/webceyhan/ng-weather-app/actions/workflows/main.yml)
+[![Deploy to Heroku](https://github.com/webceyhan/ng-weather-app/actions/workflows/heroku.yml/badge.svg)](https://github.com/webceyhan/ng-weather-app/actions/workflows/heroku.yml)
 
 # WeatherApp
 
