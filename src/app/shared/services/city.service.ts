@@ -5,7 +5,9 @@ import { map } from 'rxjs/operators';
 
 import { CityListResponse } from '../models';
 
-const API_URL = 'http://geodb-free-service.wirefreethought.com/v1/geo/cities';
+// Refer to server.js
+const API_URL = '/api/cities';
+// const API_URL = 'http://geodb-free-service.wirefreethought.com/v1/geo/cities';
 
 @Injectable({
   providedIn: 'root',

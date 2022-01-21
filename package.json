@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "heroku-postbuild": "ng build --prod",
-    "start" : "node server.js",
+    "start": "node server.js",
     "ng": "ng",
     "serve": "ng serve",
     "build": "ng build",
@@ -25,6 +25,7 @@
     "@ng-bootstrap/ng-bootstrap": "^11.0.0",
     "bootstrap": "^4.6.1",
     "express": "^4.17.2",
+    "node-fetch": "^2.6.7",
     "path": "^0.12.7",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
