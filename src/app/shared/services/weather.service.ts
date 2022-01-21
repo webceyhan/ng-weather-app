@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
-import { environment } from '../../../environments/environment';
+// Refer to server.js
+// import { environment } from '../../../environments/environment';
 import {
   Forecast,
   ForecastResponse,
@@ -53,14 +54,8 @@ const transformForecast = (response: ForecastResponse): Forecast => {
 export class WeatherService {
   constructor(private http: HttpClient) {}
 
-  private get<T>(path: string, query?: string) {
-    return this.http.get<T>(environment.apiUrl + path, {
-      params: {
-        q: query,
-        units: environment.apiUnit,
-        appid: environment.apiKey,
-      },
-    });
+  private get<T>(path: string, city?: string) {
+    return this.http.get<T>('/api' + path, { params: { city } });
   }
 
   getWeather(city: string) {
