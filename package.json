@@ -2,15 +2,15 @@
   "name": "ng-weather-app",
   "version": "0.0.0",
   "author": "Evren Ceyhan",
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/webceyhan/ng-weather-app.git"
-    },
-    "bugs": {
-        "url": "https://github.com/webceyhan/ng-weather-app/issues"
-    },
-    "homepage": "https://github.com/webceyhan/ng-weather-app#readme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webceyhan/ng-weather-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/webceyhan/ng-weather-app/issues"
+  },
+  "homepage": "https://github.com/webceyhan/ng-weather-app#readme",
   "scripts": {
     "heroku-postbuild": "ng build --prod",
     "start": "node server.js",
@@ -43,8 +43,8 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~13.1.4",
-    "@angular/cli": "~13.1.4",
+    "@angular-devkit/build-angular": "~13.2.2",
+    "@angular/cli": "~13.2.2",
     "@angular/compiler-cli": "~13.1.3",
     "@types/jasmine": "~3.6.0",
     "@types/jasminewd2": "~2.0.3",
