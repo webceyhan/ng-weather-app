@@ -1,6 +1,16 @@
 {
-  "name": "weather-app",
+  "name": "ng-weather-app",
   "version": "0.0.0",
+  "author": "Evren Ceyhan",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webceyhan/ng-weather-app.git"
+    },
+    "bugs": {
+        "url": "https://github.com/webceyhan/ng-weather-app/issues"
+    },
+    "homepage": "https://github.com/webceyhan/ng-weather-app#readme",
   "scripts": {
     "heroku-postbuild": "ng build --prod",
     "start": "node server.js",
