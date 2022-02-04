@@ -73,7 +73,7 @@ npm run test        # run the test suits
 npm run build       # build for production
 ```
 
-> Take a look at the other scripts in [`package.json`](https://github.com/webceyhan/ng-weather-app/blob/master/package.json)
+> Take a look at the other scripts in [`package.json`](https://github.com/webceyhan/ng-weather-app/blob/main/package.json)
 
 <br>
 <!-- DEVELOPMENT //////////////////// -->
@@ -128,7 +128,7 @@ A built-in Github Action will automatically deploy the project to Heroku on ever
    on:
        push:
            branches:
-               - master
+               - main
    jobs:
        build:
            runs-on: ubuntu-latest
