@@ -50,6 +50,7 @@ app.get("/api/cities", async (req, res) => {
 
 // STATIC //////////////////////////////////////////////////////////////////////////////////////////
 
+const port = process.env.PORT || 8080;
 const rootDir = __dirname + "/dist/weather-app";
 
 app.use(express.static(rootDir));
@@ -58,4 +59,4 @@ app.get("/*", function (req, res) {
   res.sendFile(path.join(rootDir + "/index.html"));
 });
 
-app.listen(process.env.PORT || 8080);
+app.listen(port, () => console.log(`server started: http://localhost:${port}`));
