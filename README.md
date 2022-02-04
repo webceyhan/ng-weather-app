@@ -143,8 +143,18 @@ A built-in Github Action will automatically deploy the project to Heroku on ever
    and set `OPENWEATHER_API_KEY` value (same as in .env file)
 
 > Heroku will run the followin steps during the deploy process:
+>
 > - `npm run build` to create /dist/<project-name> folder.
 > - `npm start` to start backend for serving app.
+
+<br>
+<!-- Roadmap -->
+
+## Roadmap
+
+- [ ] Implement API Url switch on development
+
+> See the [open issues](https://github.com/webceyhan/ng-weather-app/issues) for a full list of proposed features (and known issues).
 
 <br>
 <!-- REFERENCES ////////////////////////////////////////////////////////// -->
