@@ -3,6 +3,9 @@
 [![CodeQL](https://github.com/webceyhan/ng-weather-app/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/webceyhan/ng-weather-app/actions/workflows/codeql-analysis.yml)
 [![Deploy to Heroku](https://github.com/webceyhan/ng-weather-app/actions/workflows/heroku.yml/badge.svg)](https://github.com/webceyhan/ng-weather-app/actions/workflows/heroku.yml)
 
+<!-- LOGO (OPTIONAL) -->
+<img src="./src/assets/screenshot.png">
+
 <!-- HEADER ///////////////////////////////////////////////////////////// -->
 
 # Angular Weather Application
