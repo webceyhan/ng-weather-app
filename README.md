@@ -1,7 +1,6 @@
 <!-- AUTOMATION BADGES -->
 
-[![CodeQL](https://github.com/webceyhan/ng-weather-app/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/webceyhan/ng-weather-app/actions/workflows/codeql-analysis.yml)
-[![Deploy to Heroku](https://github.com/webceyhan/ng-weather-app/actions/workflows/heroku.yml/badge.svg)](https://github.com/webceyhan/ng-weather-app/actions/workflows/heroku.yml)
+[![CodeQL](https://github.com/webceyhan/ng-weather-app/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/webceyhan/ng-weather-app/actions/workflows/github-code-scanning/codeql)
 
 <!-- LOGO (OPTIONAL) -->
 <img src="./src/assets/screenshot.png">
@@ -13,11 +12,6 @@
 This is a simple weather application built on Angular Framework.
 It uses `GeoCities API` to provide auto-suggestion for world city names.
 After choosing a city, weather forecast information will be fetched from `OpeanWeatherMap API` to demonstrate the weather cards for given city.
-
-[View Demo](https://webceyhan-ng-weather-app.herokuapp.com) |
-[Report Issue](https://github.com/webceyhan/ng-weather-app/issues) |
-[Request Feature](https://github.com/webceyhan/ng-weather-app/pulls) |
-[@webceyhan](https://twitter.com/webceyhan)
 
 <br>
 <!-- REQUIREMENTS /////////////////////////////////////////////////////// -->
@@ -102,34 +96,13 @@ Use the `--configuration production` flag for a production build.
 <br>
 <!-- DEPLOYMENT ////////////////////////////////////////////////////////// -->
 
-## Deployment (Heroku)
+## Deployment (Render)
 
-A GitHub Action will automatically deploy the project to Heroku on every push.
+Project is linked to [Render](https://render.com/) for deployment.
 
-> See the details in [.github/workflows/heroku.yml](./.github/workflows/heroku.yml)
+> It will automatically deploy the project to Render on every push.
 
-1. Create an [Heroku](https://www.heroku.com/home) account.
-
-2. Install the `heroku-cli` as shown in the [guide](https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli).
-
-3. Create a new Heroku app inside the project folder to bind it.
-
-   ```sh
-   heroku create
-   ```
-
-   > This will create a new application on Heroku server and bind it to your project by adding a remote `heroku` upstream to your git repository.
-
-4. Set the following secrets on your GitHub repository:
-
-   ```sh
-   HEROKU_API_KEY
-   HEROKU_APP_NAME
-   HEROKU_EMAIL
-   ```
-
-5. Visit your Heroku dashboard and go to `app -> settings -> config-vars`
-   and set `OPENWEATHER_API_KEY` value (same as in .env file)
+> Do not forget to add `OPENWEATHER_API_KEY` environment variable.
 
 <br>
 <!-- REFERENCES ////////////////////////////////////////////////////////// -->
@@ -143,6 +116,3 @@ A GitHub Action will automatically deploy the project to Heroku on every push.
 - [Express](https://expressjs.com/) (backend server)
   - [GeoCities API](http://geodb-free-service.wirefreethought.com/v1/geo/cities)
   - [OpeanWeatherMap API](https://api.openweathermap.org/data/2.5)
-- [GitHub Actions](https://docs.github.com/en/actions)
-  - [Heroku](https://www.heroku.com)
-  - [heroku-deploy](https://github.com/akhileshns/heroku-deploy@)
