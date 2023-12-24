@@ -1,0 +1,7 @@
+{
+  "/api": {
+    "secure": "false",
+    "changeOrigin": "true",
+    "target": "http://0.0.0.0:3001"
+  }
+}

@@ -50,7 +50,7 @@ app.get("/api/cities", async (req, res) => {
 
 // STATIC //////////////////////////////////////////////////////////////////////////////////////////
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3001;
 const rootDir = __dirname + "/dist/ng-weather-app";
 
 app.use(express.static(rootDir));
